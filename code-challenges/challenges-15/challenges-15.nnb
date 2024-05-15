@@ -24,7 +24,7 @@
         {
             "language": "javascript",
             "source": [
-                ""
+                "function equalizeArray(arr) {\n    let obj = {};\nfor(let i =0 ;i<arr.length ;i++){\n  obj[arr[i]]= ++obj[arr[i]] || 1\n}\nlet key = Object.keys(obj)\nlet value = Object.values(obj)\nlet max = Math.max(...value)\nlet index = value.findIndex(x =>{return x == max})\nlet repeated = key[index]\nlet deletions = 0\n  for(let i in arr){\n    if(arr[i] != repeated )\n    deletions++\n  }\n\nreturn deletions\n\n}"
             ],
             "outputs": []
         },
