@@ -17,14 +17,14 @@
         {
             "language": "markdown",
             "source": [
-                "#####  [Equality In An Array](https://www.hackerrank.com/challenges/equality-in-a-array/problem?isFullScreen=true)\n\nSolution:"
+                "#####  [Append And Delete](https://www.hackerrank.com/challenges/append-and-delete/problem?isFullScreen=true)\n\nSolution:"
             ],
             "outputs": []
         },
         {
             "language": "javascript",
             "source": [
-                "function equalizeArray(arr) {\n    let obj = {};\nfor(let i =0 ;i<arr.length ;i++){\n  obj[arr[i]]= ++obj[arr[i]] || 1\n}\nlet key = Object.keys(obj)\nlet value = Object.values(obj)\nlet max = Math.max(...value)\nlet index = value.findIndex(x =>{return x == max})\nlet repeated = key[index]\nlet deletions = 0\n  for(let i in arr){\n    if(arr[i] != repeated )\n    deletions++\n  }\n\nreturn deletions\n\n}"
+                "function appendAndDelete(s, t, k) {\n\n\n    let f = false;\n    let index = -1;\n    const sLen = s.length;\n    const tLen = t.length;\n    let smallerLen = Math.min(sLen, tLen);\n    for (let i = 0; i < sLen && i < tLen; i++) {\n        if (s[i] !== t[i]) {\n            index = i;\n            break;\n        }\n    }\n    let deleteMoves = sLen - index;\n    let appendMoves = tLen - index;\n    let moves = deleteMoves + appendMoves;\n    if (index === -1) {\n        if (sLen === tLen) {\n            moves = 0;\n        } else {\n            moves = Math.abs(sLen - tLen);\n        }\n    }\n    while (k > moves) {\n        if (smallerLen > 0 && sLen !== tLen) {\n            moves += 2;\n            smallerLen--;\n        } else {\n            f = true;\n            break;\n        }\n    }\n    if (k === moves) f = true;\n    return f ? \"Yes\" : \"No\";\n \n  }"
             ],
             "outputs": []
         },
@@ -38,7 +38,7 @@
         {
             "language": "markdown",
             "source": [
-                "#####  [Halloween Sale](https://www.hackerrank.com/challenges/halloween-sale/problem?isFullScreen=true)\n\nSolution:"
+                "#####  [Encryption](https://www.hackerrank.com/challenges/encryption/problem?isFullScreen=true)\n\nSolution:"
             ],
             "outputs": []
         },
@@ -52,7 +52,7 @@
         {
             "language": "markdown",
             "source": [
-                "#####  [Sherlock And Squares](https://www.hackerrank.com/challenges/sherlock-and-squares/problem?isFullScreen=true)\n\nSolution:"
+                "#####  [The Time In Words](https://www.hackerrank.com/challenges/the-time-in-words/problem?isFullScreen=true)\n\nSolution:"
             ],
             "outputs": []
         },
